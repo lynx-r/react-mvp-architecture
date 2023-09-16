@@ -1,17 +1,19 @@
-import type { UpdatableState } from '@/core/UpdatableState'
-import initState from '../presenter/initState'
-import type { State } from '../types'
+import type { StateManager } from "@/core/StateManager";
+import initState from "../presenter/initState";
+import type { MarketInfoState } from "../types";
 
-const store: (state: State) => UpdatableState<State> = (state: State) => ({
+const store: (state: MarketInfoState) => StateManager<MarketInfoState> = (
+  state: MarketInfoState
+) => ({
   state,
-  updateState(newState: State) {
-    state = newState
+  updateState(newState: MarketInfoState) {
+    state = newState;
   },
   resetState() {
-    state = initState()
-  }
-})
+    state = initState();
+  },
+});
 
-export function simpleMarketplaceStore(state: State) {
-  return store(state)
+export function simpleMarketplaceStore(state: MarketInfoState) {
+  return store(state);
 }

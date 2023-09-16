@@ -7,10 +7,10 @@ export default function MarketInfo() {
 
   return (
     <>
-      <div>Market info: {presenter.marketInfo}</div>
+      <div>Market info: {presenter.state.marketInfo.info}</div>
       <button
         onClick={() => {
-          presenter.onGenerateRandomMarketInfo();
+          presenter.onGenerateRandom();
         }}
       >
         generate info

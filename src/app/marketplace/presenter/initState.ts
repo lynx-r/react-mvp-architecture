@@ -1,11 +1,11 @@
-import type { State } from '../types'
+import type { MarketInfoState } from "../types";
 
-const initState = (): State => ({
+const initState = (): MarketInfoState => ({
   shops: [],
   stocks: [],
   marketInfo: {
-    info: ''
-  }
-})
+    info: "",
+  },
+});
 
-export default initState
+export default initState;
