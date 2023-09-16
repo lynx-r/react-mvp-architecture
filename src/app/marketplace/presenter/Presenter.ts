@@ -1,8 +1,8 @@
-import { UpdatableState } from "@/core/UpdatableState";
-import type { Shop, State, Stock } from "../types";
+import { StateManager } from "@/core/StateManager";
+import type { MarketInfoState, Shop, Stock } from "../types";
 
 export interface Presenter {
-  store: UpdatableState<State>;
+  store: StateManager<MarketInfoState>;
 
   shops: Shop[];
 

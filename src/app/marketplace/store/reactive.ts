@@ -1,9 +1,9 @@
-import type { UpdatableState } from "@/core/UpdatableState";
+import type { StateManager } from "@/core/StateManager";
 import { useState } from "react";
 import initState from "../presenter/initState";
-import type { State } from "../types";
+import type { MarketInfoState } from "../types";
 
-export function useMarketplaceStore(): UpdatableState<State> {
+export function useMarketplaceStore(): StateManager<MarketInfoState> {
   const [state, setState] = useState(initState());
   return {
     state,

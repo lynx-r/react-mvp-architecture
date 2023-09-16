@@ -1,15 +1,14 @@
-import type { UpdatableState } from "./UpdatableState";
+import type { StateManager } from "./StateManager";
 
-export class PresenterStoreAdapter<T> {
-  constructor(public store: UpdatableState<T>) {}
+export class PresenterStoreAdapter<State> {
+  constructor(public store: StateManager<State>) {}
 
   protected get state() {
     return this.store.state;
   }
 
-  protected updateState(newState: Partial<T> | T[keyof T]) {
+  protected updateState(newState: Partial<State> | State[keyof State]) {
     // const mergedState = merge(this.state, newState);
-    // console.log(mergedState === this.state, "???");
     this.store.updateState({ ...this.state, ...newState });
   }
 

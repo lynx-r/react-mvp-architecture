@@ -1,16 +1,16 @@
 import { PresenterStoreAdapter } from "@/core/PresenterStoreAdapter";
-import type { UpdatableState } from "@/core/UpdatableState";
+import type { StateManager } from "@/core/StateManager";
 import type { Service } from "../service";
-import type { Shop, State, Stock } from "../types";
+import type { MarketInfoState, Shop, Stock } from "../types";
 import type { Presenter } from "./Presenter";
 
 export class PresenterImpl
-  extends PresenterStoreAdapter<State>
+  extends PresenterStoreAdapter<MarketInfoState>
   implements Presenter
 {
-  state0: State;
+  state0: MarketInfoState;
 
-  constructor(store: UpdatableState<State>, private service: Service) {
+  constructor(store: StateManager<MarketInfoState>, private service: Service) {
     super(store);
     this.state0 = store.state;
   }
